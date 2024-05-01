@@ -1,0 +1,1453 @@
+{
+	"info": {
+		"_postman_id": "e8fe0777-f1a0-4ff7-a537-9adeade09ef2",
+		"name": "Tugas Pekanan 1 - Prastio Bagusindra Sudewo",
+		"description": "**Tugas Pekan 1 Bootcamp QA Automation Batch 55 - Prastio Bagusindra Sudewo**\n\nCRUD API Aplikasi Kasir AJA\n\n![](https://i.ibb.co/L6Fvz2D/ALL.jpg)\n\n**This is the result of automation testing of all API, all the API are Passed!**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sample@ex.com\",\r\n    \"password\": \"123adsfadf@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/authentications",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"authentications"
+					]
+				},
+				"description": "API Login to get an accessToken for next sequential API"
+			},
+			"response": [
+				{
+					"name": "Authorization Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sample@ex.com\",\r\n    \"password\": \"123adsfadf@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/authentications",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"authentications"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,Accept-Encoding,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "content-length",
+							"value": "512"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:45:18 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Authentication berhasil ditambahkan\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwMzlhMjkwLTM4NzUtNDg2Yy1hNDI2LTBlM2RmNDNlNjZkOCIsImNvbXBhbnlJZCI6IjM3NTY2MDQ4LTA5ZTgtNGI3NS1iYmZjLTBhZTUwZmVjNzYwZSIsImlhdCI6MTcxMzUzNzkxOH0.S4XWrfklb0gremL4YnoAiUfUmjubZKAH9hXRu96WJg8\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwMzlhMjkwLTM4NzUtNDg2Yy1hNDI2LTBlM2RmNDNlNjZkOCIsImNvbXBhbnlJZCI6IjM3NTY2MDQ4LTA5ZTgtNGI3NS1iYmZjLTBhZTUwZmVjNzYwZSIsImlhdCI6MTcxMzUzNzkxOH0.YZ-fqm1A9gFhzDjxp0S6UXe1Ay_eB0Q3JYAjGsioPfM\",\n        \"user\": {\n            \"id\": \"0039a290-3875-486c-a426-0e3df43e66d8\",\n            \"name\": \"nama Toko\",\n            \"role\": \"admin\",\n            \"email\": \"sample@ex.com\",\n            \"officeId\": \"a78e0ab8-55a4-4350-9c64-084551d4ac25\",\n            \"companyId\": \"37566048-09e8-4b75-bbfc-0ae50fec760e\",\n            \"company_name\": \"nama Toko\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Users - Create User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kasir-serbaguna\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"jiasda2321@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "API to create user and get userID to update (PUT) and DELETE"
+			},
+			"response": [
+				{
+					"name": "Users - Create User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"kasir-serbaguna\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"jiasda2321@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "content-length",
+							"value": "140"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:57 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"User berhasil ditambahkan\",\n    \"data\": {\n        \"userId\": \"a9a27844-e320-4ed1-8185-bc0fcfbed33a\",\n        \"name\": \"kasir-serbaguna\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Units - Add Unit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"gram\",\r\n    \"description\": \"weight measurement\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/units",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"units"
+					]
+				},
+				"description": "API to create unit and get unitID to update (PUT) and DELETE"
+			},
+			"response": [
+				{
+					"name": "Units - Add Unit",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"gram\",\r\n    \"description\": \"weight measurement\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/units",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"units"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "content-length",
+							"value": "129"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:49:20 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Unit berhasil ditambahkan\",\n    \"data\": {\n        \"unitId\": \"697764d3-5913-4986-9e21-7524cf9908bb\",\n        \"name\": \"gram\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Units - Get Unit Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/units/{{unitID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"units",
+						"{{unitID}}"
+					]
+				},
+				"description": "API to get a unit detail from create unit before"
+			},
+			"response": [
+				{
+					"name": "Units - Get Unit Detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/units/{{unitID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"units",
+								"{{unitID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "accept-ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "content-length",
+							"value": "87"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:09 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"unit\": {\n            \"name\": \"gram\",\n            \"description\": \"weight measurement\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Units - Get Unit List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/units/{{unitID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"units",
+						"{{unitID}}"
+					]
+				},
+				"description": "API to get a unit list from create unit before"
+			},
+			"response": [
+				{
+					"name": "Units - Get Unit List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/units/{{unitID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"units",
+								"{{unitID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "accept-ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "content-length",
+							"value": "87"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:16 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"unit\": {\n            \"name\": \"gram\",\n            \"description\": \"weight measurement\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Units - Update Unit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"update-user\",\r\n    \"email\": \"user@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{userID}}"
+					]
+				},
+				"description": "API to update unit that are crated before"
+			},
+			"response": [
+				{
+					"name": "Units - Update Unit",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"update-user\",\r\n    \"email\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "content-length",
+							"value": "85"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:20 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"User berhasil diupdate\",\n    \"data\": {\n        \"name\": \"update-user\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Units - Delete Unit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/units/{{unitID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"units",
+						"{{unitID}}"
+					]
+				},
+				"description": "API to delete unit that are crated and updated before"
+			},
+			"response": [
+				{
+					"name": "Units - Delete Unit",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/units/{{unitID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"units",
+								"{{unitID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "content-length",
+							"value": "30"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:25 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Users - Get User Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{userID}}"
+					]
+				},
+				"description": "API to get a user detail from create unit before"
+			},
+			"response": [
+				{
+					"name": "Users - Get User Detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "accept-ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "content-length",
+							"value": "145"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:29 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"a2ca3c36-c9d1-4953-b35d-713048a6af95\",\n            \"name\": \"update-user\",\n            \"email\": \"user@example.com\",\n            \"role\": \"kasir\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Users - Get User List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "API to get a user list from create unit before"
+			},
+			"response": [
+				{
+					"name": "Users - Get User List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,accept-encoding,Accept-Encoding,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:34 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"users\": [\n            {\n                \"id\": \"a2ca3c36-c9d1-4953-b35d-713048a6af95\",\n                \"name\": \"update-user\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"17b2a865-20c9-4d7e-8c7b-5a8f9535d5f7\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"e80f39a3-28f3-45ce-aa65-3d3d989a057a\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"58a2ae1b-e3a4-421a-ad53-18fad28cc1a0\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"aa4ce1dd-7aeb-4420-b0f4-4568a5ae3861\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"4ea19125-7df1-4651-b495-5d1e67ce282b\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"39c11453-053b-4523-ab1b-4178ab4d45d5\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"0f4b0b6b-b8a6-4411-893c-af848e3f3ddc\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"e3671c92-90ec-49f8-b5c6-cda3a8e25fc0\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            },\n            {\n                \"id\": \"57189984-af8c-45e9-ab90-ed4cae150734\",\n                \"name\": \"kasir-serbaguna\",\n                \"email\": \"user@example.com\",\n                \"role\": \"kasir\"\n            }\n        ],\n        \"meta\": {\n            \"totalPages\": 43,\n            \"total\": 427,\n            \"page\": 1\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Users - Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"update-user\",\r\n    \"email\": \"user@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{userID}}"
+					]
+				},
+				"description": "API to update user that are crated before"
+			},
+			"response": [
+				{
+					"name": "Users - Update User",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"update-user\",\r\n    \"email\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "content-length",
+							"value": "85"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:37 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"User berhasil diupdate\",\n    \"data\": {\n        \"name\": \"update-user\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Users - Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{userID}}"
+					]
+				},
+				"description": "API to delete user that are crated and updated before"
+			},
+			"response": [
+				{
+					"name": "Users - Delete User",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "origin,User-Agent"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "WWW-Authenticate,Server-Authorization"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "content-length",
+							"value": "54"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 19 Apr 2024 14:48:46 GMT"
+						},
+						{
+							"key": "server",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Niagahoster"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"User berhasil dihapus\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200 or 201\", () => {",
+					"    pm.expect(pm.response.code).to.be.oneOf([200, 201])",
+					"});"
+				]
+			}
+		}
+	]
+}
